@@ -1,4 +1,5 @@
 var login, game, user;
+var newUserForm;
 var userCount;
 var state = "start";
 function setup(){
