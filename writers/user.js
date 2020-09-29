@@ -1,10 +1,10 @@
 class User {
     constructor(){
-        this.name = createInput("name");
-        this.username1 = createInput("username");
-        this.password1 = createInput("","password");
-        this.email = createInput("@gmail.com");
-        this.signUp1 = createButton("signUp");
+        this.name = ""
+        this.username1 = ""
+        this.password1 = ""
+        this.email = ""
+        
     }
     getCount(){
         var userCountref = database.ref("userCount");
@@ -18,9 +18,22 @@ class User {
         })
     }
     update(){
-        
+        var playerIndexRef = "users/user"+this.index;
+        database.ref(playerIndexRef).set({
+            name:this.name, 
+            username: this.username1,
+            password: this.password1,
+            email: this.email
+        })
 
     }
+
+    static getAllUsers(){
+        var userRef= database.ref("users");
+        userRef.on("value",(data)=>{
+            allUsers=data.val()
+        })
+        }
 
     
 }

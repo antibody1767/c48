@@ -23,8 +23,16 @@ class NewUserForm {
         this.email.position(200,160);
         this.signUp1.position(200,320);
         this.signUp1.mousePressed(()=>{
-            
+            user.name=this.name;
+            user.username1=this.username1;
+            user.password1=this.password1;
+            user.email=this.email;
+            userCount++;
+            user.index=userCount;
+            user.updateCount(user.index);
+            user.update();
         })
+
 
      }
 }

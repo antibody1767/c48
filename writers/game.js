@@ -18,10 +18,11 @@ class Game {
     }
     start(){
         if(state=== "start"){
-            // user = new user();
-            // user.getCount();
+            user = new user();
+            user.getCount();
             login = new Login();
             login.display();
+            User.getAllUsers();
         }
     }
 }
