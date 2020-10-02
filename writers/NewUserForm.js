@@ -17,20 +17,26 @@ class NewUserForm {
 
     display(){
         login.hide();
-       this.name.position(200,50);
-        this.username1.position(200,100);
+       this.name.position(200,100);
+        this.username1.position(200,150);
         this.password1.position(200,250);
-        this.email.position(200,160);
-        this.signUp1.position(200,320);
+        this.email.position(200,200);
+        this.signUp1.position(200,300);
+
         this.signUp1.mousePressed(()=>{
-            user.name=this.name;
-            user.username1=this.username1;
-            user.password1=this.password1;
-            user.email=this.email;
+            user.name=this.name.value();
+            user.username1=this.username1.value();
+            user.password1=this.password1.value();
+            user.email=this.email.value();
+          
+            
             userCount++;
             user.index=userCount;
-            user.updateCount(user.index);
+            user.updateCount(userCount);
             user.update();
+
+            homePage=new HomePage();
+            homePage.display();
         })
 
 

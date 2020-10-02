@@ -18,7 +18,7 @@ class Game {
     }
     start(){
         if(state=== "start"){
-            user = new user();
+            user = new User();
             user.getCount();
             login = new Login();
             login.display();

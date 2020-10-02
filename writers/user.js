@@ -1,9 +1,10 @@
 class User {
     constructor(){
-        this.name = ""
-        this.username1 = ""
-        this.password1 = ""
-        this.email = ""
+        this.index=null;
+        this.name = "";
+        this.username1 = "";
+        this.password1 = "";
+        this.email ="";
         
     }
     getCount(){
@@ -19,6 +20,8 @@ class User {
     }
     update(){
         var playerIndexRef = "users/user"+this.index;
+        console.log(playerIndexRef)
+        console.log(this.name)
         database.ref(playerIndexRef).set({
             name:this.name, 
             username: this.username1,
@@ -27,6 +30,15 @@ class User {
         })
 
     }
+    updateStory(story){
+        var storiesRef = "stories/story"+story.index;
+        database.ref(storiesRef).set({
+            email: this.email,
+            story: story
+        })
+      
+    }
+    
 
     static getAllUsers(){
         var userRef= database.ref("users");

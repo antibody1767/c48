@@ -25,5 +25,15 @@ class Login {
             state = "signUp";
 
         })
+        this.login1.mousePressed(()=>{
+            for(var u in allUsers){
+                if(allUsers[u].username===this.username.value() && allUsers[u].password === this.password.value()){
+                    user.name= allUsers[u].name;
+                    user.username1 = allUsers[u].username;
+                    user.email = allUsers[u].email;
+                    user.password = allUsers[u].password;
+                }
+            }
+        })
     }
 }
