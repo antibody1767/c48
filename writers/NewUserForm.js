@@ -1,32 +1,32 @@
 class NewUserForm {
     constructor(){
         this.name = createInput("name");
-        this.username1 = createInput("username");
-        this.password1 = createInput("","password");
+        this.username = createInput("username");
+        this.password = createInput("","password");
         this.email = createInput("@gmail.com");
-        this.signUp1 = createButton("signUp");
+        this.signUp = createButton("signUp");
     }
    
     hide(){
-        this.username1.hide();
-        this.password1.hide();
+        this.username.hide();
+        this.password.hide();
         this.email.hide();
-        this.signUp1.hide();
+        this.signUp.hide();
         this.name.hide();
     }
 
     display(){
         login.hide();
-       this.name.position(200,100);
-        this.username1.position(200,150);
-        this.password1.position(200,250);
+        this.name.position(200,100);
+        this.username.position(200,150);
+        this.password.position(200,250);
         this.email.position(200,200);
-        this.signUp1.position(200,300);
+        this.signUp.position(200,300);
 
-        this.signUp1.mousePressed(()=>{
+        this.signUp.mousePressed(()=>{
             user.name=this.name.value();
-            user.username1=this.username1.value();
-            user.password1=this.password1.value();
+            user.username=this.username.value();
+            user.password=this.password.value();
             user.email=this.email.value();
           
             
@@ -37,6 +37,7 @@ class NewUserForm {
 
             homePage=new HomePage();
             homePage.display();
+            this.hide();
         })
 
 

@@ -3,6 +3,7 @@ var newUserForm,homePage;
 var userCount, allUsers;
 var state = "start";
 var userCount=0;
+var storyIndex;
 
 function setup(){
     var canvas = createCanvas(400,400);

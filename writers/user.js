@@ -2,8 +2,8 @@ class User {
     constructor(){
         this.index=null;
         this.name = "";
-        this.username1 = "";
-        this.password1 = "";
+        this.username = "";
+        this.password = "";
         this.email ="";
         
     }
@@ -23,16 +23,29 @@ class User {
         console.log(playerIndexRef)
         console.log(this.name)
         database.ref(playerIndexRef).set({
+            index:this.index,
             name:this.name, 
-            username: this.username1,
-            password: this.password1,
+            username: this.username,
+            password: this.password,
             email: this.email
         })
 
     }
+
+    getStoryCount(){
+        var storyCountref = database.ref("storyIndex");
+        storyCountref.on("value",(data)=>{
+             storyIndex = data.val();
+        })
+    }
     updateStory(story){
-        var storiesRef = "stories/story"+story.index;
+        storyIndex++;
+        database.ref("/").update({
+            storyIndex:storyIndex
+        })
+        var storiesRef = "stories/story"+storyIndex;
         database.ref(storiesRef).set({
+            author:this.name,
             email: this.email,
             story: story
         })
