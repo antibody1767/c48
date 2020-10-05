@@ -23,6 +23,15 @@ class HomePage {
             s.position(200,250);
 
         })
+        this.read.mousePressed(()=>{
+            console.log("hi")
+            var storyRef="stories/story"+this.storyNum.value();
+            console.log(storyRef);
+            database.ref(storyRef).on("value",(data)=>{
+                story= data.val();
+            })
+            console.log(story);
+        })
 
     }
 }

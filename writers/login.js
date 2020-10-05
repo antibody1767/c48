@@ -27,6 +27,7 @@ class Login {
 
         })
         this.login.mousePressed(()=>{
+            var flag = 0
             for(var u in allUsers){
                 
                 if(allUsers[u].username===this.username.value() && allUsers[u].password === this.password.value()){
@@ -39,7 +40,13 @@ class Login {
                     homePage=new HomePage();
                     homePage.display();
                     this.hide();
+                    flag=1
                 }
+            }
+            if(flag === 0){
+                console.log("hi")
+                var notification = createElement("h5","username or password not correct or registered")
+                notification.position(200,250);
             }
             
         })
